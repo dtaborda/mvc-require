@@ -1,8 +1,16 @@
-define(['views/listPlayerView'], function(ListPlayerView){
+define(['views/listPlayerView', 'models/player'], function(ListPlayerView, Player){
+
+    function success(data){
+        var players = data;
+        ListPlayerView.render({players:players});
+    };
+
+    function error(reason){
+        console.log("Error!!!" + reason);
+    }
 
     function start(){
-        var players = JSON.parse(localStorage.players);
-        ListPlayerView.render({players:players});
+        Player.getPlayers(success, error);
     }
 
     return {

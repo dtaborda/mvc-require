@@ -1,7 +1,8 @@
 define(function(){
 
     var routes = [{path:'/players', controller:'listPlayerController'},
-                  {path:'/players/{playerId}', controller:'playerController'}];
+                  {path:'/players/{playerId}', controller:'playerController'},
+                  {path:'/players/add', controller:'newPlayerController'}];
 
     var defaultRoute = '/players';
     var currentHash = '';

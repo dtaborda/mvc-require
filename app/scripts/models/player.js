@@ -1,4 +1,24 @@
-define(function(){
+define(["models/api/apiUtils"], function(apiUtils){
+
+    var apiUrl = "http://localhost:5000/api";
+
+    var apiPlayersUrl = apiUrl + '/players';
+
+    function getPlayers(success, error){
+        apiUtils.getData({
+            apiURL: apiPlayersUrl,
+            successCallback: function(data) { success(data); },
+            errorCallback: function(reason) { error(reason); }
+        });
+    };
+
+    function getPlayer(id, success, error){
+        apiUtils.getData({
+            apiURL: apiPlayersUrl + '/' + id,
+            successCallback: function(data) { success(data); },
+            errorCallback: function(reason) { error(reason); }
+        });
+    }
 
     function player(player){
         this.name = player.name;
@@ -12,5 +32,8 @@ define(function(){
         this.avatar = player.avatar;
     };
 
-    return player;
+    return{
+        getPlayers: getPlayers,
+        getPlayer: getPlayer
+    }
 });

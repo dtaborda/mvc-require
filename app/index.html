@@ -21,14 +21,35 @@
         <![endif]-->
 
         <header></header>
-        <nav>
-          <a href="#/players">Player</a>
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#/players">Player</a></li>
+                <li><a href="#">Link</a></li>
+              </ul>
+            </div>
+          </div>
+
         </nav>
 
         <div class="content-fluid">
           <h1>Team</h1>
-          <div id="app"></div>
-
+          <div class="row">
+            <div class="col-md-12">
+              <div class="well" id="app"></div>
+            </div>
+          </div>
 
         <footer></footer>
 
